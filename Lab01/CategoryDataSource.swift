@@ -11,20 +11,22 @@ import RxSwift
 import RxCocoa
 import Alamofire
 import SwiftyJSON
+import ReachabilitySwift
 
 class CategoryDataSource {
     let disposeBag = DisposeBag()
-    var list = Variable<[String]>([])
+    var list = Variable<[Category]>([])
     
     let index: [Int] = [2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19 , 20, 21, 22, 24, 34, 50, 51]
     
     func getData(collectionView: UICollectionView) {
+        
         list.value = Services.getCategoryImageURLs(index: index)
         
         self.list.asObservable().bindTo(collectionView.rx.items(cellIdentifier: "categoryCell", cellType: CategoryCollectionViewCell.self)
         ) { (item, category, cell) in
             cell.tag = self.index[item]
-            cell.loadImage(url: category)
+            cell.loadImage(url: category.title)
             
             }.addDisposableTo(self.disposeBag)
         

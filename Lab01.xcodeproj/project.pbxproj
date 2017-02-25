@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		250D04BB023F17D7FB9EE3D0 /* Pods_Lab01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0D81B43252B34D187D4A16 /* Pods_Lab01.framework */; };
+		BF56ECCB1E5FFEAC0005723F /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56ECCA1E5FFEAC0005723F /* AudioManager.swift */; };
+		BF6515B31E5F1E07007B12D1 /* StringScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6515B21E5F1E07007B12D1 /* StringScore.swift */; };
+		BF6515B51E5F1F11007B12D1 /* SongToPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6515B41E5F1F11007B12D1 /* SongToPlay.swift */; };
 		BF6F1DC31E59A139007958C2 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F1DC21E59A139007958C2 /* Services.swift */; };
 		BFAA70E51E5B148600036C72 /* MinimizeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA70E41E5B148500036C72 /* MinimizeTransition.swift */; };
 		BFAA70EC1E5BE34C00036C72 /* CategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA70EB1E5BE34C00036C72 /* CategoryDataSource.swift */; };
@@ -26,12 +29,20 @@
 		BFACF0F01E59850E00287EAF /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFACF0EE1E59850E00287EAF /* CategoryCollectionViewCell.xib */; };
 		BFACF0F21E59867F00287EAF /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFACF0F11E59867F00287EAF /* CategoryViewController.swift */; };
 		BFACF0F41E59902B00287EAF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFACF0F31E59902B00287EAF /* Category.swift */; };
+		BFE841121E616C1600E94CBB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE841111E616C1600E94CBB /* Constant.swift */; };
+		BFEAA8BA1E602E7600AF8774 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEAA8B91E602E7600AF8774 /* LeftViewController.swift */; };
+		BFEAA8BC1E602E9500AF8774 /* LeftDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEAA8BB1E602E9500AF8774 /* LeftDataSource.swift */; };
+		BFEAA8C21E60904E00AF8774 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEAA8C11E60904E00AF8774 /* PlayerController.swift */; };
+		BFEAA8C41E60955900AF8774 /* PlayerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEAA8C31E60955900AF8774 /* PlayerController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B0D81B43252B34D187D4A16 /* Pods_Lab01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lab01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7107364005216233058965CE /* Pods-Lab01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lab01.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lab01/Pods-Lab01.debug.xcconfig"; sourceTree = "<group>"; };
 		8840B8906DFDC2372B66F097 /* Pods-Lab01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lab01.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lab01/Pods-Lab01.release.xcconfig"; sourceTree = "<group>"; };
+		BF56ECCA1E5FFEAC0005723F /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		BF6515B21E5F1E07007B12D1 /* StringScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringScore.swift; sourceTree = "<group>"; };
+		BF6515B41E5F1F11007B12D1 /* SongToPlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongToPlay.swift; sourceTree = "<group>"; };
 		BF6F1DC21E59A139007958C2 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		BFAA70E41E5B148500036C72 /* MinimizeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimizeTransition.swift; sourceTree = "<group>"; };
 		BFAA70EB1E5BE34C00036C72 /* CategoryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDataSource.swift; sourceTree = "<group>"; };
@@ -52,6 +63,11 @@
 		BFACF0EE1E59850E00287EAF /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		BFACF0F11E59867F00287EAF /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		BFACF0F31E59902B00287EAF /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BFE841111E616C1600E94CBB /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		BFEAA8B91E602E7600AF8774 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		BFEAA8BB1E602E9500AF8774 /* LeftDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftDataSource.swift; sourceTree = "<group>"; };
+		BFEAA8C11E60904E00AF8774 /* PlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
+		BFEAA8C31E60955900AF8774 /* PlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,7 @@
 			children = (
 				BFACF0F31E59902B00287EAF /* Category.swift */,
 				BFACF0EB1E597A4A00287EAF /* Song.swift */,
+				BF6515B41E5F1F11007B12D1 /* SongToPlay.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -110,6 +127,8 @@
 				BFAA70EB1E5BE34C00036C72 /* CategoryDataSource.swift */,
 				BFAA70ED1E5BE88700036C72 /* ListSongViewController.swift */,
 				BFAA70EF1E5BE89300036C72 /* ListSongDataSource.swift */,
+				BFEAA8B91E602E7600AF8774 /* LeftViewController.swift */,
+				BFEAA8BB1E602E9500AF8774 /* LeftDataSource.swift */,
 			);
 			name = "Controller+DataSource";
 			sourceTree = "<group>";
@@ -155,8 +174,21 @@
 				BF6F1DC21E59A139007958C2 /* Services.swift */,
 				BFAA70EA1E5BE31B00036C72 /* CustomizeTransition */,
 				BFAA70F51E5CC68600036C72 /* CustomNavigationController.swift */,
+				BFE841131E616C4200E94CBB /* Utils */,
+				BF56ECCA1E5FFEAC0005723F /* AudioManager.swift */,
+				BFEAA8C11E60904E00AF8774 /* PlayerController.swift */,
+				BFEAA8C31E60955900AF8774 /* PlayerController.xib */,
 			);
 			path = Lab01;
+			sourceTree = "<group>";
+		};
+		BFE841131E616C4200E94CBB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BF6515B21E5F1E07007B12D1 /* StringScore.swift */,
+				BFE841111E616C1600E94CBB /* Constant.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +226,13 @@
 				TargetAttributes = {
 					BFACF0D51E59652300287EAF = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = GDY7XCAX4D;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -223,6 +261,7 @@
 			files = (
 				BFAA70F41E5CA65700036C72 /* SongTableViewCell.xib in Resources */,
 				BFACF0F01E59850E00287EAF /* CategoryCollectionViewCell.xib in Resources */,
+				BFEAA8C41E60955900AF8774 /* PlayerController.xib in Resources */,
 				BFACF0E41E59652300287EAF /* LaunchScreen.storyboard in Resources */,
 				BFACF0E11E59652300287EAF /* Assets.xcassets in Resources */,
 				BFACF0DF1E59652300287EAF /* Main.storyboard in Resources */,
@@ -290,9 +329,16 @@
 				BFACF0EF1E59850E00287EAF /* CategoryCollectionViewCell.swift in Sources */,
 				BFACF0EC1E597A4A00287EAF /* Song.swift in Sources */,
 				BFAA70F01E5BE89300036C72 /* ListSongDataSource.swift in Sources */,
+				BFEAA8C21E60904E00AF8774 /* PlayerController.swift in Sources */,
+				BFE841121E616C1600E94CBB /* Constant.swift in Sources */,
 				BF6F1DC31E59A139007958C2 /* Services.swift in Sources */,
+				BF6515B51E5F1F11007B12D1 /* SongToPlay.swift in Sources */,
 				BFACF0DC1E59652300287EAF /* ViewController.swift in Sources */,
 				BFACF0DA1E59652300287EAF /* AppDelegate.swift in Sources */,
+				BFEAA8BA1E602E7600AF8774 /* LeftViewController.swift in Sources */,
+				BFEAA8BC1E602E9500AF8774 /* LeftDataSource.swift in Sources */,
+				BF56ECCB1E5FFEAC0005723F /* AudioManager.swift in Sources */,
+				BF6515B31E5F1E07007B12D1 /* StringScore.swift in Sources */,
 				BFACF0F41E59902B00287EAF /* Category.swift in Sources */,
 				BFAA70EC1E5BE34C00036C72 /* CategoryDataSource.swift in Sources */,
 				BFAA70EE1E5BE88700036C72 /* ListSongViewController.swift in Sources */,
@@ -420,7 +466,9 @@
 			baseConfigurationReference = 7107364005216233058965CE /* Pods-Lab01.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GDY7XCAX4D;
 				INFOPLIST_FILE = Lab01/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jimmy.Lab01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -433,7 +481,9 @@
 			baseConfigurationReference = 8840B8906DFDC2372B66F097 /* Pods-Lab01.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GDY7XCAX4D;
 				INFOPLIST_FILE = Lab01/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jimmy.Lab01;
 				PRODUCT_NAME = "$(TARGET_NAME)";

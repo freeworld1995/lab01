@@ -16,8 +16,8 @@ class ListSongDataSource {
     var songs = Variable<[Song]>([])
     let disposeBag = DisposeBag()
     
-    func getSongs(tableView: UITableView) {
-        Alamofire.request("https://itunes.apple.com/us/rss/topsongs/limit=50/genre=1/explicit=true/json").responseJSON { (response) in
+    func getSongs(tableView: UITableView, genreNum: Int) {
+        Alamofire.request("https://itunes.apple.com/us/rss/topsongs/limit=50/genre=\(genreNum)/explicit=true/json").responseJSON { (response) in
             if let value = response.result.value {
                 self.songs.value = Song.parse(json: JSON(value))
                 self.songs.asObservable().bindTo(tableView.rx.items(cellIdentifier: "SongTableViewCell", cellType: SongTableViewCell.self)
@@ -28,4 +28,5 @@ class ListSongDataSource {
         }
     }
 }
+
 

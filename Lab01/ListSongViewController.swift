@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import Alamofire
 import SwiftyJSON
+import SDWebImage
 
 class ListSongViewController: UIViewController {
     
@@ -21,17 +22,36 @@ class ListSongViewController: UIViewController {
     var image: UIImageView?
     var label: String?
     
+    var genreNum: Int!
+    
     let datasource = ListSongDataSource()
+    let disposebag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        datasource.getSongs(tableView: tableView)
+        datasource.getSongs(tableView: tableView, genreNum: genreNum)
+        tableView.rx.setDelegate(self).addDisposableTo(disposebag)
         tableView.register(UINib(nibName: "SongTableViewCell", bundle: nil), forCellReuseIdentifier: "SongTableViewCell")
         
         imageFromCategoryVC.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backToCategory)))
         imageFromCategoryVC.isUserInteractionEnabled = true
         
         navigationItem.title = "Discovery"
+        setupDidSelectRow()
+    }
+    
+    func setupDidSelectRow() {
+        tableView.rx.modelSelected(Song.self).subscribe(onNext: { (song) in
+            Services.playSongWithTitle(title: song.name)
+            PlayerController.shared.title.text = song.name
+            PlayerController.shared.artist.text = song.artist
+            PlayerController.shared.image.sd_setImage(with: URL(string: song.image))
+            PlayerController.shared.setTimer()
+        }, onError: { (error) in
+            print(error)
+        }, onCompleted: { 
+            print("completed touch song")
+        }, onDisposed: nil).addDisposableTo(disposebag)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,11 +68,7 @@ class ListSongViewController: UIViewController {
     func backToCategory(gesture: UITapGestureRecognizer) {
         self.navigationController?.popToRootViewController(animated: true)
     }
-    
-    //    func setupNavBar() {
-    //        self.na
-    //    }
-    
+
 }
 
 extension ListSongViewController: UITableViewDelegate {

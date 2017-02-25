@@ -9,7 +9,7 @@
 import UIKit
 
 class MinimizeTransition: NSObject {
-    var duration = 2.0
+    var duration = 1.0
     var originalFrame: CGRect!
     var presenting = true
     
