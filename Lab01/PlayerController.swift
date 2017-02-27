@@ -15,6 +15,9 @@ class PlayerController: UIView {
     
     static var shared = PlayerController(frame: CGRect.zero)
     
+    var song: Song!
+    var genreNum: Int?
+    
     var image: UIImageView!
     var title: UILabel!
     var artist: UILabel!
@@ -23,11 +26,17 @@ class PlayerController: UIView {
     
     var timer: Timer?
     
+    var isExecutable = true
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.isHidden = true
         self.backgroundColor = Color.playerBackground
         self.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToMusicPlayerVC)))
         
         addImage()
         addButton()
@@ -36,15 +45,15 @@ class PlayerController: UIView {
         
     }
     
+    func goToMusicPlayerVC(gesture: UITapGestureRecognizer) {
+        appDelegate.window?.rootViewController?.present(MusicPlayerViewController.shared, animated: true, completion: nil)
+        
+    }
     
     func setTimer() {
-
-        
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateProgressView), userInfo: nil, repeats: true)
     }
-    
-
     
     func updateProgressView() {
         if AudioManager.shareInstance.player?.rate != 0 {
@@ -52,8 +61,8 @@ class PlayerController: UIView {
             
             let current = CMTimeGetSeconds(AudioManager.shareInstance.player!.currentTime())
             let dur = CMTimeGetSeconds(AudioManager.shareInstance.player!.currentItem!.asset.duration)
-            
-            print("current: \(Float(current)) / \(Float(dur)) = \(Float(current) / Float(dur) )")
+
+//            print("current: \(Float(current)) / \(Float(dur)) = \(Float(current) / Float(dur) )")
             progressView.setProgress(Float(current) / Float(dur) , animated: true)
             
         }

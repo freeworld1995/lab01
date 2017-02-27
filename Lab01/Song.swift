@@ -19,7 +19,7 @@ class Song {
         self.artist = artist
         self.image = image
     }
-    
+
     class func parse(json: JSON) -> [Song] {
         var songs = [Song]()
         let feed = json["feed"]
@@ -32,5 +32,11 @@ class Song {
             songs.append(song)
         }
         return songs
+    }
+}
+
+extension Song {
+    static func ==(lhs: Song, rhs: Song) -> Bool {
+        return lhs.name == rhs.name && lhs.artist == rhs.artist && lhs.image == rhs.image
     }
 }

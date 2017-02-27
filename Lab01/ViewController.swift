@@ -33,7 +33,6 @@ class ViewController: UIViewController {
                     }.addDisposableTo(self.disposeBag)
             }
         }
-
         
         let lists = Observable<[Song]>.create { (observer) -> Disposable in
             let request = Alamofire.request("https://itunes.apple.com/us/rss/topsongs/limit=50/genre=1/explicit=true/json").responseJSON(completionHandler: { (response) in

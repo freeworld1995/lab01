@@ -33,7 +33,7 @@ class Services {
     class func playSongWithTitle(title: String) {
         
         let url = "http://api.mp3.zing.vn/api/mobile/search/song?requestdata={\"q\":\"\(title)\", \"sort\":\"hot\", \"start\":\"0\", \"length\":\"5\"}"
-            print(url)
+        
         let finalUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
         Alamofire.request(finalUrl!).responseJSON { (response) in
@@ -57,7 +57,7 @@ class Services {
                     if let value = response.response?.url?.absoluteString {
                         let playerItem = AVPlayerItem(url: URL(string: value)!)
                         AudioManager.shareInstance.player = AVPlayer(playerItem: playerItem)
-                        AudioManager.shareInstance.player?.play()
+                        AudioManager.shareInstance.isPlaying = true
                     }
                 }
             }
@@ -65,9 +65,11 @@ class Services {
     }
     
     class func checkEmptyResult(json: JSON) -> Bool {
-        let count = json["numFound"].int!
+        if let count = json["numFound"].int {
+            return count > 0
+        }
+        return false
         
-        return count > 0
     }
     
     class func getSongToPlay(json: JSON) -> [SongToPlay] {

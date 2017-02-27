@@ -1,8 +1,8 @@
 //
-//  ListSongDataSource.swift
+//  MusicPlayerDataSource.swift
 //  Lab01
 //
-//  Created by Jimmy Hoang on 2/21/17.
+//  Created by Jimmy Hoang on 2/26/17.
 //  Copyright © 2017 Jimmy Hoang. All rights reserved.
 //
 
@@ -11,8 +11,11 @@ import RxSwift
 import RxCocoa
 import Alamofire
 import SwiftyJSON
+import SDWebImage
+import AVFoundation
+import MediaPlayer
 
-class ListSongDataSource {
+class MusicPlayerDataSource {
     var songs = Variable<[Song]>([])
     let disposeBag = DisposeBag()
     
@@ -23,10 +26,13 @@ class ListSongDataSource {
                 self.songs.asObservable().bindTo(tableView.rx.items(cellIdentifier: "SongTableViewCell", cellType: SongTableViewCell.self)
                 ) { (row, song, cell) in
                     cell.setup(song: song)
+                    
+                    if AudioManager.shareInstance.selectedSongIndex == row {
+                        cell.isSelected = true
+                    }
                 }.addDisposableTo(self.disposeBag)
             }
         }
     }
+
 }
-
-

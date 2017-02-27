@@ -34,6 +34,9 @@
 		BFEAA8BC1E602E9500AF8774 /* LeftDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEAA8BB1E602E9500AF8774 /* LeftDataSource.swift */; };
 		BFEAA8C21E60904E00AF8774 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEAA8C11E60904E00AF8774 /* PlayerController.swift */; };
 		BFEAA8C41E60955900AF8774 /* PlayerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEAA8C31E60955900AF8774 /* PlayerController.xib */; };
+		BFEFB47C1E62C7A000A28CC1 /* CustomeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB47B1E62C7A000A28CC1 /* CustomeSlider.swift */; };
+		BFEFB47E1E62C89A00A28CC1 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB47D1E62C89A00A28CC1 /* MusicPlayerViewController.swift */; };
+		BFEFB4801E62F4D000A28CC1 /* MusicPlayerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB47F1E62F4D000A28CC1 /* MusicPlayerDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		BFEAA8BB1E602E9500AF8774 /* LeftDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftDataSource.swift; sourceTree = "<group>"; };
 		BFEAA8C11E60904E00AF8774 /* PlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 		BFEAA8C31E60955900AF8774 /* PlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerController.xib; sourceTree = "<group>"; };
+		BFEFB47B1E62C7A000A28CC1 /* CustomeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomeSlider.swift; sourceTree = "<group>"; };
+		BFEFB47D1E62C89A00A28CC1 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
+		BFEFB47F1E62F4D000A28CC1 /* MusicPlayerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,8 @@
 				BFAA70EF1E5BE89300036C72 /* ListSongDataSource.swift */,
 				BFEAA8B91E602E7600AF8774 /* LeftViewController.swift */,
 				BFEAA8BB1E602E9500AF8774 /* LeftDataSource.swift */,
+				BFEFB47D1E62C89A00A28CC1 /* MusicPlayerViewController.swift */,
+				BFEFB47F1E62F4D000A28CC1 /* MusicPlayerDataSource.swift */,
 			);
 			name = "Controller+DataSource";
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 				BF56ECCA1E5FFEAC0005723F /* AudioManager.swift */,
 				BFEAA8C11E60904E00AF8774 /* PlayerController.swift */,
 				BFEAA8C31E60955900AF8774 /* PlayerController.xib */,
+				BFEFB47B1E62C7A000A28CC1 /* CustomeSlider.swift */,
 			);
 			path = Lab01;
 			sourceTree = "<group>";
@@ -332,16 +341,19 @@
 				BFEAA8C21E60904E00AF8774 /* PlayerController.swift in Sources */,
 				BFE841121E616C1600E94CBB /* Constant.swift in Sources */,
 				BF6F1DC31E59A139007958C2 /* Services.swift in Sources */,
+				BFEFB47E1E62C89A00A28CC1 /* MusicPlayerViewController.swift in Sources */,
 				BF6515B51E5F1F11007B12D1 /* SongToPlay.swift in Sources */,
 				BFACF0DC1E59652300287EAF /* ViewController.swift in Sources */,
 				BFACF0DA1E59652300287EAF /* AppDelegate.swift in Sources */,
 				BFEAA8BA1E602E7600AF8774 /* LeftViewController.swift in Sources */,
 				BFEAA8BC1E602E9500AF8774 /* LeftDataSource.swift in Sources */,
 				BF56ECCB1E5FFEAC0005723F /* AudioManager.swift in Sources */,
+				BFEFB4801E62F4D000A28CC1 /* MusicPlayerDataSource.swift in Sources */,
 				BF6515B31E5F1E07007B12D1 /* StringScore.swift in Sources */,
 				BFACF0F41E59902B00287EAF /* Category.swift in Sources */,
 				BFAA70EC1E5BE34C00036C72 /* CategoryDataSource.swift in Sources */,
 				BFAA70EE1E5BE88700036C72 /* ListSongViewController.swift in Sources */,
+				BFEFB47C1E62C7A000A28CC1 /* CustomeSlider.swift in Sources */,
 				BFAA70F61E5CC68600036C72 /* CustomNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

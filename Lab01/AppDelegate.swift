@@ -14,7 +14,7 @@ import MediaPlayer
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let scc = MPRemoteCommandCenter.shared()
+
     func createMenuView() {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = slideMenuController
         PlayerController.shared.frame = CGRect(x: 0, y: 0, width: self.window!.frame.width, height: 70)
         self.window?.rootViewController?.view.addSubview(PlayerController.shared)
-        
+
         let rectBottom = NSLayoutConstraint(item: PlayerController.shared, attribute: .bottom, relatedBy: .equal, toItem: self.window?.rootViewController?.view, attribute: .bottom, multiplier: 1.0, constant: 0.0)
         let rectTrailing = NSLayoutConstraint(item: PlayerController.shared, attribute: .trailing, relatedBy: .equal, toItem: self.window?.rootViewController?.view, attribute: .trailing, multiplier: 1.0, constant: 0.0)
         let rectLeading = NSLayoutConstraint(item: PlayerController.shared, attribute: .leading, relatedBy: .equal, toItem: self.window?.rootViewController?.view, attribute: .leading, multiplier: 1.0, constant: 0.0)
@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController?.view.addConstraint(rectLeading)
         self.window?.rootViewController?.view.addConstraint(rectHeight)
         self.window?.rootViewController?.view.addConstraint(rectBottom)
+
         
         NSLayoutConstraint.activate([rectBottom, rectTrailing, rectLeading, rectHeight])
         
@@ -49,44 +50,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        UIApplication.shared.keyWindow?.addSubview(rect)
         //        UIApplication.shared.keyWindow?.bringSubview(toFront: rect)
         self.window?.makeKeyAndVisible()
-        setupControlCenter()
     }
+
     
-    func setupControlCenter() {
-        
-        
-        scc.playCommand.addTarget { (success) -> MPRemoteCommandHandlerStatus in
-            return .success
-        }
-        scc.pauseCommand.addTarget(self, action: #selector(doPause))
-        scc.togglePlayPauseCommand.addTarget(self, action: #selector(doPlayPause))
-        
-    }
+//    override var canBecomeFirstResponder: Bool {
+//        return true
+//    }
     
-    func doPlay(_ event: MPRemoteCommandEvent) {
-        print("play")
-        AudioManager.shareInstance.player?.play()
-    }
-    
-    func doPause(_ event: MPRemoteCommandEvent) {
-        print("pause")
-        AudioManager.shareInstance.player?.pause()
-    }
-    
-    func doPlayPause(_ event: MPRemoteCommandEvent) {
-        print("PlayPause")
-        if AudioManager.shareInstance.player?.rate != 0 {
-            AudioManager.shareInstance.player?.play()
-        } else {
-            AudioManager.shareInstance.player?.pause()
-        }
-    }
+   
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         createMenuView()
-        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-        UIApplication.shared.beginReceivingRemoteControlEvents()
+
+//        UIApplication.shared.beginReceivingRemoteControlEvents()
         return true
     }
     
@@ -106,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        try? AVAudioSession.sharedInstance().setActive(true)
+
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

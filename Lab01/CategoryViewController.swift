@@ -31,9 +31,7 @@ class CategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-     
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(internetChange), name: ReachabilityChangedNotification, object: reachability)
         
         do {
@@ -70,7 +68,7 @@ class CategoryViewController: UIViewController {
         
         
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ListSongViewController {
             let category = sender as? Category
